@@ -13,16 +13,17 @@ RUN apt-get update && apt-get install -y \
 
 RUN php5enmod mcrypt \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && mkdir -p /data/www
+    && mkdir -p /var/www/html
 
 # Cleanup
 RUN apt-get clean \
 	&& apt-get autoremove -y \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-VOLUME ["/data"]
+VOLUME ["/var/www/html"]
 
-WORKDIR /data/www
+WORKDIR /var/www/html
 
 ENTRYPOINT ["composer"]
+
 CMD ["--help"]
