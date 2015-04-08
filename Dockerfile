@@ -1,6 +1,6 @@
 # wpsinc/docker-composer
 
-FROM php:5.6-cli
+FROM debian:jessie
 
 MAINTAINER "Austin Maddox" <amaddox@wps-inc.com>
 
@@ -9,6 +9,7 @@ WORKDIR /tmp
 RUN apt-get update && apt-get install -y \
     curl \
     git \
+    php5-cli \
     php5-mcrypt
 
 RUN php5enmod mcrypt \
