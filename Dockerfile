@@ -10,9 +10,11 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     php5-cli \
+    php5-curl \
     php5-mcrypt
 
 RUN php5enmod mcrypt \
+    && php5enmod curl \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && mkdir -p /var/www/html
 
