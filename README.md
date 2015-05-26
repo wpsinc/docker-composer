@@ -1,5 +1,5 @@
 # docker-composer
 
 ```shell
-docker build --rm --force-rm --no-cache --tag="wpsinc/docker-composer" ./docker-composer/
+docker build --rm --force-rm --tag="wpsinc/docker-composer" .
 ```
