@@ -2,7 +2,7 @@
 
 FROM debian:jessie
 
-MAINTAINER "Austin Maddox" <amaddox@wps-inc.com>
+MAINTAINER "WPS" <web_services@wps-inc.com>
 
 WORKDIR /tmp
 
